@@ -33,13 +33,13 @@
 // Did something happened? If not, please check again the slides
 // to setup Atom.
 
-let a=              1234    ;
-   a++;
-                if (  a > 123 ) {
+let a= 1234;
+a++;
+if (  a > 123 ) {
 a--;
-        }
-                                              else a++
-        console.log(a);
+}
+else a++
+console.log(a);
 
 // b. Why is it still different from the code indented on the slide?
 // Automatic indentation simply adjustes the space on the left-hand
@@ -90,13 +90,16 @@ function(notUsed) {
 
 // a. Auto complete for console.log, On the next line, start typing log.
 // A popup window will show up with suggestion, pick the first one.
+console.console.log();
 
 // b. Auto complete for a personal note to fix this line of code. Start typing
 // fix.
+// FIXME: Fix the errors above.
 
 // c. What are all the other suggestions? Atom collects and indexes all the
 // words in the projects and suggest them to you as you type. Sometimes
 // annoying, sometimes useful.
+
 
 // EXERCISE 3. Shorcuts.
 ////////////////////////
@@ -111,9 +114,10 @@ function(notUsed) {
 // the file system, just from Atom. Then reopen it using the shortcut
 // Ctrl-Shift-A.
 
+
 // b. Comment out useless code with Ctrl-/. Notice if you applied the
 // command multiple times, it will uncomment/comment/uncomment... it.
-let uselessCode = 'I am useles';
+// let uselessCode = 'I am useles';
 
 // c. Cool. What other shorcuts are available? Here is a shortcut to find
 // them all. Ctrl-Shift-P. Some Look around and remember how to get here,
@@ -140,7 +144,7 @@ if (true) {
 // b. That was easy, furthermore Atom alreadys highlights the matching
 // parentheses. In more complicated cases, you might want to use the
 // keyboard shortcut. What is it? You can search for it in the menu of all
-// Atom commands. It is also written next to the menu option you clicked 
+// Atom commands. It is also written next to the menu option you clicked
 // for exercise 4.a.
 
 // EXERCISE 5. Git.
@@ -155,8 +159,8 @@ if (true) {
 
 // c. Add a proper "commit" message to describe your changes. Be concise.
 
-// d. Good! Your changes are saved. If you have the permissions, you will 
-// be able to push your code online, otherwise you may have to do a 
+// d. Good! Your changes are saved. If you have the permissions, you will
+// be able to push your code online, otherwise you may have to do a
 // "pull request". We will learn about "pull requests" later.
 
 // EXERCISE 6. Hydrogen.
