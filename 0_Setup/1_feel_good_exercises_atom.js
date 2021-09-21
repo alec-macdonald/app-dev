@@ -74,10 +74,10 @@ console.log(a);
 // Hint: follow the pattern.
 a = 1
 b = 2
-c .= 3
+c = 3
 
 // Hint: This function has no name following the word function.
-function(notUsed) {
+function sayeHello(){
     console.log('Hello!');
 }
 
