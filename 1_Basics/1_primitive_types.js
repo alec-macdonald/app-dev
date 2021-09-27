@@ -32,6 +32,9 @@
 // This has also the disadvantage that the linter will complain about
 // the variable not being defined. Let it complain, he is a grumpy old linter.
 
+//Note from Alec: this makes sense now. I was wondering why I kept seeing red
+//dots from linter.
+
 // Do you remember how to use Hydrogen? It is very easy:
 // - to execute the line where the cursor is, press Ctrl-Enter.
 // - to execute multiple lines at once, highlight them, and press Ctrl-Enter.
@@ -93,11 +96,21 @@ typeof undefined;
 
 // a. Compute (18 + 107) / (5 * 25)
 
+a = (18+107)/(5*25)
+
 // b. Compute the square root of one million.
+
+b = 1000000**0.5 //To clear this, click on the 'Javascript (Node.js) | Idle'
+//button at the bottom of the screen and reset the kernel (which clears all
+//variables)
 
 // c. Take the remainder of the division betwen 123 and 9 squared, minus 1.
 
+c = (123 % Math.pow(9, 2)) - 1;
+
 // d. Take the integer part of the float number 2.123456789 (need to use Math).
+
+d = Math.floor(2.123456789)
 
 // Now compute:
 a*b*c*d;
@@ -133,10 +146,14 @@ luzernPopulation = a*b*c*d;
 // in a variable (and pick a proper name for the variable!).
 // Hint. The Math object is your friend .
 
+rand = Math.random()
 
 // b. Update the variable so that the value of the random number is
 // between 0 and the one hundred thoudands.
 
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
 
 // EXERCISE 4. Conditionals.
 ////////////////////////////
@@ -149,6 +166,18 @@ luzernPopulation = a*b*c*d;
 // otherwise print "Few but good!"
 // Hint: Use console.log to print.
 
+if (rand > luzernPopulation) {
+    console.log("Go Luzern!")
+}
+else if (luzernPopulation === rand) {
+    console.log("Are we in the Matrix?")
+}
+else{
+    console.log("Few but good!")
+}
+
+//THIS SECTION IS IMPORTANT
+
 
 // EXERCISE 5. String manipulation.
 ///////////////////////////////////
@@ -158,10 +187,14 @@ luzernPopulation = a*b*c*d;
 str1 = "Always remember that you are absolutely unique.";
 str2 = 'Just like everyone else.';
 
+strcomb = str1 + str2
 
 // b. Did you remember to add a space between them?
 // If so how many characters is the final string?
 
+strcomb = str1 + " " + str2
+
+strcomb.length
 
 // c. Did you know that you can also join strings and numbers together?
 // Replace str2 with a new sentence that includes the total population count
@@ -170,24 +203,34 @@ str2 = 'Just like everyone else.';
 // Then, join it with str1 and update finalStr.
 // Important. String must end with a dot (needed for exercise below).
 
+str2 = 'Just like the other ' + luzernPopulation + ' people in Luzern.'
+
+strComb = str1 + " " + str2
 
 // d. Alternatively, you can specify strings using the backtick sign `
 // which allows for in-string variable substitution.
 
+//NOTE: Not sure what this means. See solution.
 
 // e. If you made it until now, you may prefer a more positive message
 // in the finalStr variable. Extract a substring which contains only
 // the first part.
 // Hint: Use substring and the length property.
 
+strComb.indexOf('Just')
+
+strCombSub = strComb.substr(0, 48).trim()
 
 // f. Now shout it loud and make the it upper case.
 // Hint: Use toUpperCase.
 
+strCombSub = strCombSub.toLocaleUpperCase()
 
 // g. Let's be honest. An upper case sentence must end with an exclamation mark.
 // Replace the dot at the end of the sentence with an exclamation mark.
 
+strCombSub.length
+strCombSub.replace('.','!')
 
 // EXERCISE 6. Constants.
 /////////////////////////
@@ -195,11 +238,11 @@ str2 = 'Just like everyone else.';
 // You just unlocked a great insight with exercise 5, which is contained in
 // the variable finalStr. You do not want anybody to change that string
 // ever again, so you decide it to assign it to constant.
-const myFinalStr = finalStr;
-myFinalStr
+const finalStrCombSub = strCombSub;
+finalStrCombSub
 
 // Now try to change it to something else.
-myFinalStr = 'something else'
+finalStrCombSub = 'something else'
 
 // You should have seen error below. We will later learn that constants behave
 // differently with objects, but for now you are done, you completed the first
