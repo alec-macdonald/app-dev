@@ -90,7 +90,7 @@ persons[1];
 // d. Access the property year of the second element of the array.
 persons[1].year;
 
-// EXERCISE 3. Pick a random item in the array of persons.
+// EXERCISE 4. Pick a random item in the array of persons.
 //////////////////////////////////////////////////////////
 
 // Hint. Generate a random number between 0 and the total
@@ -99,7 +99,7 @@ persons[1].year;
 randomNumber = Math.floor(Math.random()*persons.length);
 persons[randomNumber];
 
-// EXERCISE 4. Add a new elements to the array of persons.
+// EXERCISE 5. Add a new elements to the array of persons.
 //////////////////////////////////////////////////////////
 
 // You just realized that Phil Katz (born 1962) also deserves to be
@@ -114,7 +114,7 @@ persons[randomNumber];
 // Verify that you added at the bottom.
 persons[3];
 
-// EXERCISE 5. Replace an element in the array of persons.
+// EXERCISE 6. Replace an element in the array of persons.
 //////////////////////////////////////////////////////////
 
 // Maybe you hurried too much with Phil Katz. What about
@@ -129,7 +129,7 @@ persons[3] = {
 // Verify who is the bottom of the array.
 persons[3];
 
-// EXERCISE 6. Remove elements from the array of persons.
+// EXERCISE 7. Remove elements from the array of persons.
 //////////////////////////////////////////////////////////
 
 // You decided to give a more consistent look to the persons array:
@@ -143,7 +143,7 @@ persons.splice(1,2);
 // Verify the content of the updated array.
 persons;
 
-// EXERCISE 7. Loop through the elements of an array.
+// EXERCISE 8. Loop through the elements of an array.
 /////////////////////////////////////////////////////
 
 // "Where there is an array there is a loop" is a famous adagio. Actually,
@@ -187,7 +187,7 @@ for (let i=0; i < persons.length; i++) {
 }
 paragraph += '.';
 
-// EXERCISE 7. Loop through the properties of an object.
+// EXERCISE 9. Loop through the properties of an object.
 ////////////////////////////////////////////////////////
 
 // Looping through the properties of an object is slightly different
@@ -212,7 +212,7 @@ for (let property in obj) {
     }
 }
 
-// EXERCISE 8. Bonus. Constant objects.
+// EXERCISE 10. Bonus. Constant objects.
 ///////////////////////////////////////
 // This is weird, and it takes a lot of JavaScript to understand why it is so.
 // Constant objects are not constant. For now, just embrace it.
