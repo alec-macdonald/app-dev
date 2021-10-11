@@ -49,8 +49,15 @@ typeof null;
 // Hint. The property name must contain the full name (Brendan Eich), and
 // the property birth must contain the year in which he was born (1961).
 
+user = {
+    name: 'Brendan Eich',
+    year: 1961
+};
+
 // b. Access the properties of the person object.
 
+user.year;
+user.name;
 
 // EXERCISE 2. Add and remove properties to the person object.
 //////////////////////////////////////////////////////
@@ -58,6 +65,10 @@ typeof null;
 // Now you realize that it makes more sense to split the property 'name' into
 // two: 'first' and 'last' name. Accordingly you delete the propery name.
 
+user.first= 'Brendan';
+user.last= 'Eich';
+delete user.name;
+user;
 
 // EXERCISE 3. Create an array of persons.
 //////////////////////////////////////////
@@ -66,16 +77,34 @@ typeof null;
 // You already have Brendan, now add another two inspiring personalities.
 // For example, Pablo Picasso and Napoleon Bonaparte. When are they born?
 
+//personsArray = [user.firstName + " " + user.lastName,
+//'Pablo Picasso',
+//'Napoleon Bonaparte']
+
+//SOLUTION
+persons = [
+    user,
+    {first: 'Pablo', last: 'Picasso', year: 1881},
+    {first: 'Napoleon', last: 'Bonaparte', year: 1821},
+];
+
+
 // b. Count how many elements are in the array.
 
+persons.length;
+
 // c. Access the second element of the array.
+
+persons[1];
 
 // Arrays are 0-indexed, that is the first element has index 0,
 // the second element 1, and so on.
 
 // d. Access the property year of the second element of the array.
 
-// EXERCISE 3. Pick a random item in the array of persons.
+persons[1].year;
+
+// EXERCISE 4. Pick a random item in the array of persons.
 //////////////////////////////////////////////////////////
 
 // Hint. Generate a random number between 0 and the total
@@ -84,7 +113,7 @@ typeof null;
 randomNumber = Math.floor(Math.random()*persons.length);
 persons[randomNumber];
 
-// EXERCISE 4. Add a new elements to the array of persons.
+// EXERCISE 5. Add a new elements to the array of persons.
 //////////////////////////////////////////////////////////
 
 // You just realized that Phil Katz (born 1962) also deserves to be
@@ -97,19 +126,29 @@ persons[randomNumber];
 // will add at the bottom of the array.
 
 // Verify that you added at the bottom.
-persons[3];
 
-// EXERCISE 5. Replace an element in the array of persons.
+personsPlus = [
+    persons,
+    {first: 'Phil', last: 'Katz', year: 1962},
+];
+
+personsPlus[3];
+
+// EXERCISE 6. Replace an element in the array of persons.
 //////////////////////////////////////////////////////////
+
+personsPlus[3] = {
+    first: 'Linus', last: 'Torvalds', year: 1969
+};
 
 // Maybe you hurried too much with Phil Katz. What about
 // replacing him with Linus Torvalds (1969) instead?
 // Hint: simply assign a new value at a given array index.
 
 // Verify who is the bottom of the array.
-persons[3];
+personsPlus[3];
 
-// EXERCISE 6. Remove elements from the array of persons.
+// EXERCISE 7. Remove elements from the array of persons.
 //////////////////////////////////////////////////////////
 
 // You decided to give a more consistent look to the persons array:
@@ -118,12 +157,12 @@ persons[3];
 // containing the data about Picasso and Napoleon.
 // Hint: the method `splice` modifies the original array and returns the
 // removed elements.
-persons.splice(1,2);
+personsPlus.splice(1,2);
 
 // Verify the content of the updated array.
-persons;
+personsPlus;
 
-// EXERCISE 7. Loop through the elements of an array.
+// EXERCISE 8. Loop through the elements of an array.
 /////////////////////////////////////////////////////
 
 // "Where there is an array there is a loop" is a famous adagio. Actually,
@@ -134,6 +173,9 @@ persons;
 // in which the persons are born.
 // Hint: use console.log to print. Use let when you define the iterating index.
 
+for(let i=0; i<personsPlus.length; i++) {
+    console.log(personsPlus[i].year);
+}
 
 // b. This time you want to create a short paragraph which verbosely
 // describes the content of the person array. The final paragraph should look
@@ -145,10 +187,20 @@ persons;
 // Hint2: You will also need some if logic to correctly add or not the comma
 // between the first and the second element and finishing with a dot.
 
+text = `There are ${personsPlus.length} elements in the array: `;
+for(let i=0; i<personsPlus.length; i++) {
+    let p = personsPlus[i];
+    text += `element ${i+1} is ${p.first} ${p.last}, born in ${p.year}`
+    if (i !== persons.length - 1) text += ', ';
+}
+
+text += ".";
+
+
 // c. bonus. Can you replace the part "element 1" with "the first element" and
 // "element 2" with the "second element" and so on?
 
-// EXERCISE 7. Loop through the properties of an object.
+// EXERCISE 9. Loop through the properties of an object.
 ////////////////////////////////////////////////////////
 
 // Looping through the properties of an object is slightly different
@@ -167,8 +219,16 @@ persons;
 // Hint: in this exercise objects behave like arrays, but instead of a
 // numeric index, you use the property name.
 
+object = personsPlus[1];
+for (let property in object) {
+    if (object.hasOwnProperty(property)) {
+        console.log(property + ': ' + object[property]);
+    }
+}
 
-// EXERCISE 8. Bonus. Constant objects.
+//NOTE: Not sure why the first entry is giving me so much trouble, but it is.
+
+// EXERCISE 10. Bonus. Constant objects.
 ///////////////////////////////////////
 // This is weird, and it takes a lot of JavaScript to understand why it is so.
 // Constant objects are not constant. For now, just embrace it.
